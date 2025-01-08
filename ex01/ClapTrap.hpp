@@ -6,7 +6,7 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:09:32 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/08 16:11:24 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/08 16:47:33 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,23 @@
 # include <iostream>
 
 class ClapTrap{
-    private:
+    //private: // this will block to access without using public or protected getter setter methods
+    protected : 
+    // to let the derived class (who will inherits this class) to access to the base memeber without using getter setter.
+    // so that it can be modified.
+    // but except for derived ones, external code cannot access them directly.
             std::string _name;
             unsigned int _hitPoints;
             unsigned int _energyPoints;
             unsigned int _attackDamage;
-      
+            
     public:
-        ClapTrap(const std::string name);
+        ClapTrap(const std::string name); // virtual does not work 
         ~ClapTrap();
         ClapTrap(const ClapTrap& other);
         ClapTrap& operator=(const ClapTrap& other);
 
-        void attack(const std::string& target);
+        virtual void attack(const std::string& target);
         // void ClapTrap::attack(ClapTrap& target); // target has to be fixed :  no const
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
