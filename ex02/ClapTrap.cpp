@@ -6,7 +6,7 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:09:46 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/13 14:33:40 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/13 14:36:08 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,23 @@ ClapTrap::~ClapTrap(){
     std::cout << "ClapTrap " << _name << " is destroyed." << std::endl;
 }
 
-// ClapTrap::ClapTrap(const ClapTrap& other)
-// {
-//     std::cout << "Copy construtor called" << std::endl;
-//     std::cout << "ClapTrap " << _name << " is copied" << std::endl;
-//     *this = other;
-// }
+ClapTrap::ClapTrap(const ClapTrap& other)
+{
+    // std::cout << "Copy construtor called" << std::endl;
+    std::cout << "ClapTrap " << _name << " is copied." << std::endl;
+    *this = other;
+}
 
 
 // this is better for cpu efficiency as it initialize the value with data being copied at first
 // so if you make function without initializing list and give *this = other; 
 // it will call copy assignment operator in which assignment called again.
-ClapTrap::ClapTrap(const ClapTrap& other)
-: _name(other._name), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
-{
-    std::cout << "Copy construtor called" << std::endl;
-    std::cout << "ClapTrap " << _name << " is copied." << std::endl;
-}
+// ClapTrap::ClapTrap(const ClapTrap& other)
+// : _name(other._name), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
+// {
+//     // std::cout << "Copy construtor called" << std::endl;
+//     std::cout << "ClapTrap " << _name << " is copied" << std::endl;
+// }
 
 // ClapTrap::ClapTrap(const ClapTrap& other)
 // {
@@ -52,11 +52,12 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 //     std::cout << "ClapTrap" << _name << "is copied" << std::endl;
 // }
 
+
 ClapTrap& ClapTrap:: operator=(const ClapTrap& other)
 {
     
     std::cout << "Copy Assignment Operator called\n";
-    std::cout << "ClapTrap " << _name << " is assigned." << std::endl;
+    std::cout << "ClapTrap " << _name << " is assigned."<< std::endl;
     if (this != &other)
     {
         _name = other._name;
@@ -121,7 +122,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         _energyPoints--;
         _hitPoints += amount;
         std::cout << "ClapTrap " << _name << " repaired " << amount \
-     << " amount of hit points, so that hitpoints gets back to " << _hitPoints << "." << std::endl;    
+    << " amount of hit points, so that hitpoints gets back to " << _hitPoints << "." << std::endl;    
     }
     else {
         std::string hitOrEnergy = \

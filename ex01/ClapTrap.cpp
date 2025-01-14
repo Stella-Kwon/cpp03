@@ -6,29 +6,40 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:09:46 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/08 11:40:38 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/13 15:12:08 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string name) 
+ClapTrap::ClapTrap(const std::string& name) 
 : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "Default construtor called" << std::endl;
-    std::cout << "ClapTrap " << _name << " is created" << std::endl;
+    // std::cout << "Default construtor called" << std::endl;
+    std::cout << "ClapTrap " << _name << " is created." << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
-    std::cout << "Destrutor called" << std::endl;
-    std::cout << "ClapTrap " << _name << " is destroyed" << std::endl;
+    // std::cout << "Destrutor called" << std::endl;
+    std::cout << "ClapTrap " << _name << " is destroyed." << std::endl;
 }
 
+// ClapTrap::ClapTrap(const ClapTrap& other)
+// {
+//     std::cout << "Copy construtor called" << std::endl;
+//     std::cout << "ClapTrap " << _name << " is copied" << std::endl;
+//     *this = other;
+// }
+
+
+// this is better for cpu efficiency as it initialize the value with data being copied at first
+// so if you make function without initializing list and give *this = other; 
+// it will call copy assignment operator in which assignment called again.
 ClapTrap::ClapTrap(const ClapTrap& other)
 : _name(other._name), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
 {
-    std::cout << "Copy construtor called" << std::endl;
-    std::cout << "ClapTrap " << _name << " is copied" << std::endl;
+    // std::cout << "Copy construtor called" << std::endl;
+    std::cout << "ClapTrap " << _name << " is copied." << std::endl;
 }
 
 // ClapTrap::ClapTrap(const ClapTrap& other)
@@ -44,8 +55,8 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 ClapTrap& ClapTrap:: operator=(const ClapTrap& other)
 {
     
-    std::cout << "Copy Assignment Operator called\n";
-    std::cout << "ClapTrap " << _name << " is assigned to old ClapTrap"<< other._name<< std::endl;
+    // std::cout << "Copy Assignment Operator called\n";
+    std::cout << "ClapTrap " << _name << " is assigned." << std::endl;
     if (this != &other)
     {
         _name = other._name;

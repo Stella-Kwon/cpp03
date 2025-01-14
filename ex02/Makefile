@@ -1,10 +1,11 @@
-NAME = ScavTrap
+NAME = FragTrap
 
 COMPILER = c++
 
 SRC = 	main.cpp\
 		ClapTrap.cpp\
-		ScavTrap.cpp
+		ScavTrap.cpp \
+		FragTrap.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++20 $(EXTRA_FLAGS)
 EXTRA_FLAGS = -Wshadow -Wno-shadow

@@ -6,7 +6,7 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:09:46 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/13 14:33:40 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/13 15:04:09 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ ClapTrap::~ClapTrap(){
 
 // ClapTrap::ClapTrap(const ClapTrap& other)
 // {
-//     std::cout << "Copy construtor called" << std::endl;
-//     std::cout << "ClapTrap " << _name << " is copied" << std::endl;
+//     // std::cout << "Copy construtor called" << std::endl;
+//     std::cout << "ClapTrap " << _name << " is copied." << std::endl;
 //     *this = other;
 // }
 
@@ -38,8 +38,8 @@ ClapTrap::~ClapTrap(){
 ClapTrap::ClapTrap(const ClapTrap& other)
 : _name(other._name), _hitPoints(other._hitPoints), _energyPoints(other._energyPoints), _attackDamage(other._attackDamage)
 {
-    std::cout << "Copy construtor called" << std::endl;
-    std::cout << "ClapTrap " << _name << " is copied." << std::endl;
+    // std::cout << "Copy construtor called" << std::endl;
+    std::cout << "ClapTrap " << _name << " is copied" << std::endl;
 }
 
 // ClapTrap::ClapTrap(const ClapTrap& other)
@@ -52,11 +52,12 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 //     std::cout << "ClapTrap" << _name << "is copied" << std::endl;
 // }
 
+
 ClapTrap& ClapTrap:: operator=(const ClapTrap& other)
 {
     
     std::cout << "Copy Assignment Operator called\n";
-    std::cout << "ClapTrap " << _name << " is assigned." << std::endl;
+    std::cout << "ClapTrap " << _name << " is assigned."<< std::endl;
     if (this != &other)
     {
         _name = other._name;
