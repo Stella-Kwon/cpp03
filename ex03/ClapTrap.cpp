@@ -6,7 +6,7 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:09:46 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/13 15:04:09 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/15 10:30:17 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,16 +93,16 @@ void ClapTrap::attack(const std::string& target){
 //     if (_hitPoints > 0 || _energyPoints > 0)
 //     {
 //         _energyPoints--;
-//         target.takeDamage(_attackDamage); // it changes so no const in pram 
-//          std::cout << "ClapTrap " << _name << " attacks " << target._name \
+//         target.takeDamage(_attackDamage); // it changes so no const in pram
+//          std::cout << "ClapTrap " << _name << " attacks " << target._name 
 //          << ", causing " << _attackDamage << " points of damage!" << std::endl;
 //     }
 //     else {
-//         std::string hitOrEnergy = \
-//         (_hitPoints == 0 && _energyPoints == 0) ? "both points :  hitpoints\" & \"energypoints" \
-//         : (_hitPoints == 0 ? "hitpoints" : "energypoints");
+//         std::string hitOrEnergy =
+//         (_hitPoints == 0 && _energyPoints == 0) ? "both points :  hitpoints\" & \"energypoints"
+//         : (_hitPoints == 0 ? "hitpoints" : "energypoints")
 
-//         std::cout << "ClapTrap " << _name << " failed to attack :: it has not enough " \
+//         std::cout << "ClapTrap " << _name << " failed to attack :: it has not enough "
 //         << hitOrEnergy << "." << std::endl;
 //     }
     
