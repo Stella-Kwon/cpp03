@@ -6,7 +6,7 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 16:12:29 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/15 10:38:10 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/15 16:40:30 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other){
 
 void ScavTrap::attack(const std::string& target){
 
-    if (_hitPoints > 0 || _energyPoints > 0)
+    if (_hitPoints > 0 && _energyPoints > 0)
     {
         _energyPoints--;
         // don't know why the param is string target not the claptrap target.

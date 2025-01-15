@@ -6,7 +6,7 @@
 /*   By: skwon2 <skwon2@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:09:46 by skwon2            #+#    #+#             */
-/*   Updated: 2025/01/15 10:30:34 by skwon2           ###   ########.fr       */
+/*   Updated: 2025/01/15 16:38:40 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ ClapTrap& ClapTrap:: operator=(const ClapTrap& other)
 
 void ClapTrap::attack(const std::string& target){
    
-    if (_hitPoints > 0 || _energyPoints > 0)
+    if (_hitPoints > 0 && _energyPoints > 0)
     {
         _energyPoints--;
         // don't know why the param is string target not the claptrap target.
@@ -90,7 +90,7 @@ void ClapTrap::attack(const std::string& target){
 
 // void ClapTrap::attack(ClapTrap& target){
    
-//     if (_hitPoints > 0 || _energyPoints > 0)
+//     if (_hitPoints > 0 && _energyPoints > 0)
 //     {
 //         _energyPoints--;
 //         target.takeDamage(_attackDamage); // it changes so no const in pram 
@@ -117,7 +117,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (_hitPoints > 0 || _energyPoints > 0)
+    if (_hitPoints > 0 && _energyPoints > 0)
     {
         _energyPoints--;
         _hitPoints += amount;
